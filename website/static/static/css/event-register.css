@@ -1,0 +1,22 @@
+#id_events .form-group {
+    margin: 0px;
+    padding: 0px;
+}
+#id_events {
+    list-style: none;
+}
+html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+}
+body {
+    margin-top: 8%;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 100%;
+}
+.well {
+    width: 100%;
+}

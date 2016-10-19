@@ -1,0 +1,40 @@
+.cb-slideshow,
+.cb-slideshow:after
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.cb-slideshow:after
+{
+    content: '';
+    background: transparent;
+}
+
+/* Show at least something when animations not supported */
+
+.no-cssanimations .cb-slideshow li span
+{
+    opacity: 1;
+}
+
+@media screen and (max-width: 1140px)
+{
+    .cb-slideshow li div h3
+    {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .cb-slideshow li div h3
+    {
+        font-size: 2.3em;
+    }
+}
+
