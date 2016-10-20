@@ -9,6 +9,7 @@
     <div class="container well">
         <form method="post">
             {% csrf_token %}
+            {{ form.non_field_errors }}
             <h2 class="col-md-12">Upcoming Events</h2>
             <p class="col-md-12">You can choose any no. of events.</p>
             <ul id="id_events" class="col-sm-12">
@@ -21,30 +22,37 @@
             {% endfor %}
             </ul>
             <div class="col-md-12 form-group label-floating">
+                {{ form.first_name.errors }}
                 <label class="control-label" for="id_first_name">First name</label>
                 <input class="form-control" id="id_first_name" minlength="3" name="first_name" type="text" required="">
             </div>
             <div class="col-md-12 form-group label-floating">
+                {{ form.last_name.errors }}
                 <label class="control-label" for="id_last_name">Last name</label>
                 <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
             </div>
             <div class="col-md-6 form-group label-floating">
+                {{ form.college.errors }}
                 <label class="control-label" for="id_college">Name of your College</label>
                 <input class="form-control" id="id_college" minlength="3" name="college" type="text" required="">
             </div>
             <div class="col-md-3 form-group label-floating">
+                {{ form.roll.errors }}
                 <label class="control-label" for="id_roll">Roll No</label>
                 <input class="form-control" id="id_roll" minlength="3" name="roll" type="text" required="">
             </div>
             <div class="col-md-3 form-group label-floating">
+                {{ form.branch.errors }}
                 <label class="control-label" for="id_branch">Branch</label>
                 <input class="form-control" id="id_branch" minlength="3" name="branch" type="text" required="">
             </div>
             <div class="col-md-6 form-group label-floating">
+                {{ form.mobile.errors }}
                 <label class="control-label" for="id_mobile">Mobile No.</label>
                 <input class="form-control" id="id_mobile" minlength="3" name="mobile" type="text" required="">
             </div>
             <div class="col-md-6 form-group label-floating">
+                {{ form.email.errors }}
                 <label class="control-label" for="id_email">Email Address</label>
                 <input class="form-control" id="id_email" name="email" type="email" required="">
             </div>

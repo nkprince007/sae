@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'imagekit',
     'event.apps.EventConfig',
     'django.contrib.admin',
     'django.contrib.auth',

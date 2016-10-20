@@ -25,10 +25,7 @@ def register(request):
                 user.events.add(Event.objects.get(pk=int(event)))
             return HttpResponse('Succesful Registration')
         else:
-            return render(request, 'register.html', {
-                'form': form,
-                'errors': form.errors
-            })
+            return render(request, 'register.html', {'form': form})
     else:
         form = EventRegisterForm()
     return render(request, 'register.html', {'form': form})
