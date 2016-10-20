@@ -1,23 +1,14 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Event Registration - SAE NITD</title>
-    <link rel='stylesheet' type='text/css' href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel='stylesheet' type='text/css' href="{% static 'css/bootstrap-material-design.css' %}" />
-    <link rel='stylesheet' type='text/css' href="{% static 'css/ripples.css' %}" />
-    <link rel='stylesheet' type='text/css' href="{% static 'css/event-register.css' %}" />
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/material.js' %}"></script>
-    <script src="{% static 'js/ripples.js' %}"></script>
-</head>
-<body>
+{% extends '_base.html' %}
+
+{% block title %}Event Registration - SAE NITD{% endblock %}
+
+{% block body %}
+    <div class="text-center section-header">
+        <h1 class="section-title">Event Registration</h1>
+    </div>
     <div class="container well">
         <form method="post">
             {% csrf_token %}
-            <h1 class="text-center" style="text-transform: uppercase">Event Registration</h1>
-            <hr/>
             <h2 class="col-md-12">Upcoming Events</h2>
             <p class="col-md-12">You can choose any no. of events.</p>
             <ul id="id_events" class="col-sm-12">
@@ -38,26 +29,28 @@
                 <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
             </div>
             <div class="col-md-6 form-group label-floating">
-                <label class="control-label" for="id_last_name">Name of your College</label>
-                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+                <label class="control-label" for="id_college">Name of your College</label>
+                <input class="form-control" id="id_college" minlength="3" name="college" type="text" required="">
             </div>
             <div class="col-md-3 form-group label-floating">
-                <label class="control-label" for="id_last_name">Roll No</label>
-                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+                <label class="control-label" for="id_roll">Roll No</label>
+                <input class="form-control" id="id_roll" minlength="3" name="roll" type="text" required="">
             </div>
             <div class="col-md-3 form-group label-floating">
-                <label class="control-label" for="id_last_name">Branch</label>
-                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+                <label class="control-label" for="id_branch">Branch</label>
+                <input class="form-control" id="id_branch" minlength="3" name="branch" type="text" required="">
             </div>
-            <div class="col-md-12 form-group label-floating">
-                <label class="control-label" for="id_last_name">Mobile No.</label>
-                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+            <div class="col-md-6 form-group label-floating">
+                <label class="control-label" for="id_mobile">Mobile No.</label>
+                <input class="form-control" id="id_mobile" minlength="3" name="mobile" type="text" required="">
+            </div>
+            <div class="col-md-6 form-group label-floating">
+                <label class="control-label" for="id_email">Email Address</label>
+                <input class="form-control" id="id_email" name="email" type="email" required="">
             </div>
             <div class="text-center">
-                <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                <button class="btn btn-lg btn-info" type="submit">Submit</button>
             </div>
         </form>
     </div>
-    <script>$.material.init()</script>
-</body>
-</html>
+{% endblock %}

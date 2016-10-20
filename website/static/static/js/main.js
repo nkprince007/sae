@@ -34,9 +34,6 @@ $(document).ready(function() {
 	// Fancybox
 	$('.work-box').fancybox();
 
-	//Scroll To top on init
-	$('#banner').velocity('scroll', 1000);
-
 	// Page Scroll
 	var sections = $('section')
 		nav = $('nav[role="navigation"]');

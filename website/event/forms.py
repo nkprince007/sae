@@ -8,8 +8,10 @@ class EventRegisterForm(forms.Form):
     college = forms.CharField(min_length=3)
     roll = forms.CharField(min_length=3)
     branch = forms.CharField(min_length=3)
+    mobile = forms.CharField(min_length=3)
+    email = forms.EmailField()
     try:
-        events = forms.ChoiceField(
+        events = forms.MultipleChoiceField(
             choices=[(obj.id, obj.name) for obj in Event.objects.upcoming() +
                      Event.objects.running_now()],
             widget=forms.CheckboxSelectMultiple,)

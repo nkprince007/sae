@@ -1,0 +1,42 @@
+body {
+	color: black;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #009688;
+}
+.section-header {
+	width: 100%;
+}
+.section-title {
+	font-family: 'Lato', sans-serif;
+	color: #1BC98E;
+	font-size: 3em;
+	text-transform: uppercase;
+	font-weight: lighter;
+	display: inline-block;
+ 	padding: 0 15px;
+  	position: relative;
+  	margin-bottom: 5%;
+}
+.section-title:before,
+.section-title:after {
+  	background: #1CA8DD;
+  	content: "";
+  	display: block;
+  	height: 5px;
+  	position: absolute;
+    top: 50%;
+    width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.section-title:before {
+  	right: 100%;
+}
+.section-title:after {
+  	left: 100%;
+}
+hr {
+	height: 0px;
+	border-top: 2px solid gray;
+}

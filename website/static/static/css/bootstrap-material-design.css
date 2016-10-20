@@ -40,6 +40,10 @@ Then, run this script to get the list.
 /* Shadows (from mdl http://www.getmdl.io/) */
 
 
+@import url('https://fonts.googleapis.com/css?family=Roboto|Lato:300,400');
+body, h1, h2, h3, h4, h5, h6, p, blockquote, a, li, span {
+  font-family: 'Roboto', sans-serif;
+}
 body {
   background-color: #252830;
 }

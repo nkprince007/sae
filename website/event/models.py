@@ -102,6 +102,10 @@ class RegisteredUser(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     college = models.CharField(max_length=100)
+    branch = models.CharField(max_length=100, default="")
+    roll = models.CharField(max_length=100, default="")
+    mobile = models.CharField(max_length=100, default="")
+    email = models.EmailField()
     events = models.ManyToManyField(Event)
 
     def __str__(self):
