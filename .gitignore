@@ -5,3 +5,7 @@ include/
 lib/
 .DS_Store
 *.pyc
+**/images/
+*.sqlite3
+**/static-only/
+**/media/
