@@ -30,6 +30,7 @@
         <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/vegas.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.scrollreveal.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/typed.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
         <!-- SCRIPTS END -->
     </head>
@@ -110,7 +111,9 @@
         </section>
         <!-- intro section end -->
         <!-- services section start -->
-        <section id="services" class="service-section">
+        {% if past_event_list or upcoming_event_list or ongoing_event_list %}
+        <section class="event-section">
+            {% if past_event_list %}
             <div class="container">
                 <div class="section-header">
                     <h2 class="events-title">Events & Workshops</h2>
@@ -130,6 +133,7 @@
                     </ul>
                 </div>
             </div>
+            {% endif %}
             {% if upcoming_event_list %}
             <div class="container">
                 <div class="section-header">
@@ -173,6 +177,7 @@
             </div>
             {% endif %}
         </section>
+        {% endif %}
         <!-- services section end -->
         <!-- gallery section start -->
         <!--<section id="gallery" class="gallery section gallery-section">
@@ -379,9 +384,10 @@
         <section class="section section-primary" id="sponsors">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h2 id="sponsor-title" class="section-title text-center"><strong>We</strong> couldn't be <strong>here</strong> without <strong>these</strong> guys.</h2>
+                    <div class="col-md-12 section-header">
+                        <h2 class="text-center"><strong>We</strong> couldn't be <strong>here</strong> without <strong>these</strong> guys.</h2>
                         <hr>
+                        <p>Our Loving Sponsors</p>
                     </div>
                 </div>
                 <div class="row">
@@ -389,9 +395,6 @@
                     {% for sponsor in sponsors %}
                         <li><img src="{{sponsor}}" ></li>
                     {% endfor %}
-                    <!--<div class="col-md-3 resp row-centered text-center sponsor-img-wrapper">
-                        <img src="{{sponsor}}" class="sponsor-img img-responsive">
-                    </div>-->
                     </ul>
                 </div>
             </div>
@@ -401,19 +404,10 @@
         <section id="contact" class="section contact-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="contact-title"><strong>We</strong>'d love to hear from <strong>you</strong>.</h2>
-                    <p class="info-success">Thanks for your valuable suggestions<br />We will keep enlivening our User Experience</p>
+                    <h2><strong>We</strong>'d love to hear from <strong>you</strong>.</h2>
                 </div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 conForm">
-                        <form method="post" onsubmit="postMail();" name="cform" id="cform">
-                            <input name="name" id="name" type="text" class="cname col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your name..." required>
-                            <input name="email" id="email" type="email" class="cemail col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="Email Address..." required>
-                            <textarea name="comments" id="comments" cols="" rows="" class="cmessage col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Message..." required></textarea>
-                            <input type="submit" id="submit" name="send" class="submitBnt csubmit" value="Send">
-                            <div id="simple-msg"></div>
-                        </form>
-                    </div>
+                <div class="container-fluid text-center">
+                    <p>Under Construction</p>
                 </div>
             </div>
         </section>
