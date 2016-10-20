@@ -20,4 +20,4 @@ Installation:
 [python3]: https://docs.python.org/3/using/
 [virtualenv]: https://virtualenv.pypa.io/en/stable/installation/
 [pip]: https://pip.pypa.io/en/stable/installing/
-[images]: /
+[images]: https://drive.google.com/open?id=0B2fvOZxngk3hOGRaWVA1R2o5ejA

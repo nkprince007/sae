@@ -1,5 +1,6 @@
 .Python
 .idea/
+**/.vscode/*
 bin/
 include/
 lib/
@@ -9,3 +10,4 @@ lib/
 *.sqlite3
 **/static-only/
 **/media/
+*.zip
