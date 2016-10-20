@@ -18,15 +18,8 @@
             {% csrf_token %}
             <h1 class="text-center" style="text-transform: uppercase">Event Registration</h1>
             <hr/>
-            <div class="col-sm-12 form-group label-floating">
-                <label class="control-label" for="id_first_name">First name</label>
-                <input class="form-control" id="id_first_name" minlength="3" name="first_name" type="text" required="">
-            </div>
-            <div class="col-sm-12 form-group label-floating">
-                <label class="control-label" for="id_last_name">Last name</label>
-                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
-            </div>
-            <h2 class="col-sm-12">Upcoming Events</h2>
+            <h2 class="col-md-12">Upcoming Events</h2>
+            <p class="col-md-12">You can choose any no. of events.</p>
             <ul id="id_events" class="col-sm-12">
             {% for event in form.events %}
                 <li>
@@ -36,6 +29,30 @@
                 </li>
             {% endfor %}
             </ul>
+            <div class="col-md-12 form-group label-floating">
+                <label class="control-label" for="id_first_name">First name</label>
+                <input class="form-control" id="id_first_name" minlength="3" name="first_name" type="text" required="">
+            </div>
+            <div class="col-md-12 form-group label-floating">
+                <label class="control-label" for="id_last_name">Last name</label>
+                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+            </div>
+            <div class="col-md-6 form-group label-floating">
+                <label class="control-label" for="id_last_name">Name of your College</label>
+                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+            </div>
+            <div class="col-md-3 form-group label-floating">
+                <label class="control-label" for="id_last_name">Roll No</label>
+                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+            </div>
+            <div class="col-md-3 form-group label-floating">
+                <label class="control-label" for="id_last_name">Branch</label>
+                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+            </div>
+            <div class="col-md-12 form-group label-floating">
+                <label class="control-label" for="id_last_name">Mobile No.</label>
+                <input class="form-control" id="id_last_name" minlength="3" name="last_name" type="text" required="">
+            </div>
             <div class="text-center">
                 <button class="btn btn-lg btn-primary" type="submit">Submit</button>
             </div>

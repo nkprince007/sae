@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.shortcuts import redirect
 from django.shortcuts import render
-from django.utils import timezone
 from django.views import View
 from event.models import *
 from os import listdir
@@ -15,13 +14,11 @@ class Home(View):
 
         context = {
             'past_event_list':
-                Event.objects.filter(is_finished=True),
+                Event.objects.past(),
             'upcoming_event_list':
-                Event.objects.filter(is_finished=False).exclude(
-                    start_date__lte=timezone.now()),
+                Event.objects.upcoming(),
             'ongoing_event_list':
-                Event.objects.filter(start_date__lte=timezone.now()).exclude(
-                    end_date__lte=timezone.now()),
+                Event.objects.running_now(),
             'sponsors': sponsors,
         }
 

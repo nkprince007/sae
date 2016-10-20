@@ -17,16 +17,12 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style4.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/vegas.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.min.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/fakeloader.css' %}">
         <!-- STYLES END -->
         <!-- SCRIPTS -->
         <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/velocity.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/fakeloader.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/jquery.smoothwheel.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/vegas.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.scrollreveal.min.js' %}"></script>
@@ -75,6 +71,9 @@
             </header>
             <div class="banner" id="banner">
                 <div class="cb-slideshow">
+                    <div class="typed-header">
+                        <span>Welcome to SAE</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -123,7 +122,7 @@
                         {% for event in past_event_list %}
                         <li>
                             <figure>
-                                <img src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
+                                <img alt="event image" src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
                                 <figcaption>
                                     <h3>{{event.name}}</h3>
                                 </figcaption>
@@ -144,7 +143,7 @@
                         {% for event in upcoming_event_list %}
                         <li>
                             <figure>
-                                <img src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
+                                <img alt="event image" src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
                                 <figcaption>
                                     <h3>{{event.name}}</h3>
                                 </figcaption>
@@ -165,7 +164,7 @@
                         {% for event in ongoing_event_list %}
                         <li>
                             <figure>
-                                <img src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
+                                <img alt="event image" src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
                                 <figcaption>
                                     <h3>{{event.name}}</h3>
                                 </figcaption>

@@ -1,5 +1,4 @@
 $(window).on('load',function() {
-
 	//Hide preloader
 	$('#fakeloader').fadeTo(1500,0);
 	setTimeout(function(){
@@ -15,14 +14,7 @@ $(document).ready(function() {
             { src: 'static/images/slides/3.jpg' },
             { src: 'static/images/slides/4.jpg' }
         ],
-        transitionDuration: 1000,
-        delay: 5000,
-        transition: ['zoomIn','flash','zoomOut']
     });
-    //Smooth Scrolling
-	if($(window).width() > 768) {
-		$("body").smoothWheel();
-	}
 	// Header Scroll
 	$(window).on('scroll', function() {
 		var scroll = $(window).scrollTop();
@@ -223,7 +215,12 @@ $(document).ready(function() {
 			});
 		}
 	});
-	
-	$('.info-success').hide();
-	
+
+	$(".cb-slideshow span").typed({
+		strings: ["Welcome to SAE", "Stunt Mania @Gravity Freakerzz", "Military Show", "Cheers to our <b>Team</b>!"],
+        backDelay: 3500,
+        loop: true,
+        showCursor: true
+	});
+
 });
