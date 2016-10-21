@@ -19,7 +19,7 @@ class EventManager(models.Manager):
             cursor.execute("""
                 SELECT * FROM event_event WHERE
                 start_date<='""" + now + """' AND end_date>='""" +
-                           now + """'""")
+                           now + """' AND is_finished=0""")
             result_list = []
             for row in cursor.fetchall():
                 entry = Event()
@@ -39,7 +39,7 @@ class EventManager(models.Manager):
         with connection.cursor() as cursor:
             cursor.execute("""
                 SELECT * FROM event_event WHERE
-                start_date>='""" + now + """'""")
+                start_date>='""" + now + """' AND is_finished=0""")
             result_list = []
             for row in cursor.fetchall():
                 entry = Event()
@@ -60,7 +60,7 @@ class EventManager(models.Manager):
             cursor.execute("""
                 SELECT * FROM event_event WHERE
                 start_date<='""" + now + """' AND end_date<='""" +
-                           now + """'""")
+                           now + """' OR is_finished=1""")
             result_list = []
             for row in cursor.fetchall():
                 entry = Event()
@@ -85,14 +85,6 @@ class Event(models.Model):
     icon = models.ImageField('Image/Poster', storage=fs)
     objects = EventManager()
 
-    def is_upcoming_event(self):
-        now = timezone.now()
-        return now <= self.start_date | (not self.is_finished)
-
-    def is_running_now(self):
-        now = timezone.now()
-        return self.start_date <= now <= self.end_date
-
     def __str__(self):
         return self.name
 
@@ -110,3 +102,10 @@ class RegisteredUser(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name
+
+
+class Suggestion(models.Model):
+
+    content = models.TextField()
+    email = models.EmailField()
+    name = models.CharField(max_length=100)

@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block title %}Successful Registration{% endblock %}
+{% block body %}
+    <div class="container" style="margin-top: 10%">
+        <div class="jumbotron col-md-12">
+            <h1>Hi {{name}}</h1>
+            <h2>Registration successful. Check your inbox for details.</h2>
+            <br />
+            <p>Please wait while you&apos;re being redirected to the main site. Redirecting in <span id="timer"></span>...</p>
+        </div>
+    </div>
+    <script>
+        time = 5;
+        timer = document.getElementById('timer')
+        setInterval(function() {
+            if(time<=0)
+                window.location = "{% url 'home' %}"
+            else {
+                timer.innerHTML = time;
+                time -= 1;
+            }
+        },1000);
+    </script>
+{% endblock %}

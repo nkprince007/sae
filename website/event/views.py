@@ -19,11 +19,13 @@ def register(request):
             user.branch = form.cleaned_data['branch']
             user.roll = form.cleaned_data['roll']
             user.mobile = form.cleaned_data['mobile']
+            user.email = form.cleaned_data['email']
             events = request.POST.getlist('events')
             user.save()
             for event in events:
                 user.events.add(Event.objects.get(pk=int(event)))
-            return HttpResponse('Succesful Registration')
+            user.save()
+            return render(request, 'success.html', {'name': user})
         else:
             return render(request, 'register.html', {'form': form})
     else:
