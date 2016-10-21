@@ -1,4 +1,5 @@
 from .models import Event
+from django.forms import widgets
 from django import forms
 
 
@@ -18,3 +19,9 @@ class EventRegisterForm(forms.Form):
         )
     except Exception:
         events = None
+
+
+class SuggestionForm(forms.Form):
+    content = forms.CharField(widget=widgets.Textarea)
+    email = forms.EmailField()
+    name = forms.CharField(min_length=3)

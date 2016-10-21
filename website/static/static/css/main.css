@@ -61,8 +61,6 @@ h5
 }
 
 .btn {
-	background-color: transparent;
-	color: #3496d8;
 	font-size: 16px;
 	font-weight: 600;
 	-moz-border-radius: 2px;
@@ -71,12 +69,6 @@ h5
 	display: inline-block;
 	text-transform: uppercase;
 	border: 1px solid #3496d8;
-}
-
-.btn:hover, .btn:focus
-{
-    background-color: #3496d8;
-    color: #fff;
 }
 
 .btn-large
@@ -535,15 +527,6 @@ Common Styles
     padding-top: 5%;
     z-index: 1;
 }
-
-.event
-{
-}
-
-.event img
-{
-}
-
 .resp
 {
     height: 300px;
@@ -1235,6 +1218,10 @@ ul.list-default li
     {
         padding: 15%;
     }
+    .sponsor-list li {
+        width: 20em;
+        height: 15em;
+    }
     #sponsors .row-centered, #services .row-centered
     {
         width: 50%;
@@ -1345,6 +1332,10 @@ ul.list-default li
     font-family: 'Open Sans Light';
 }
 
+.event-list figure:hover {
+    cursor: pointer;
+}
+
 .event-list figure:hover img {
     transform: translateY(-10%);
 }
@@ -1430,26 +1421,59 @@ ul.list-default li
     color: white;
 }
 
-.cname
-{
-    background-color: transparent;
-    border-radius: 5px;
+.suggestion form {
+    border: none;
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
 }
 
-.cemail
-{
-    background-color: transparent;
-    border-radius: 5px;
+.suggestion div {
+    border: none;
 }
 
-.cmessage
-{
-    background-color: transparent;
+.suggestion * {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    margin: 2%;
+    text-decoration: none;
+    outline: none;
+    display: block;
+    color: white;
     border-radius: 5px;
+    border: 2px solid white;
+    background-color: transparent;
+    transition: all 0.2s ease-in;
 }
 
-.csubmit
-{
+@media only screen and (max-width: 768px) {
+    .suggestion input, .suggestion textarea {
+        width: 100%;
+        margin: 2% 0px;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+::-webkit-input-placeholder:focus {
+    color: #009688;
+}
+
+.suggestion *:focus {
+    border: 4px solid white;
+    background: white;
+    color: #009688;
+}
+
+.suggestion input {
+    height: 5%;
+}
+
+.suggestion textarea {
+    height: 10%;
 }
 
 .info-success
@@ -1547,3 +1571,75 @@ ul.list-default li
     50% { opacity:0; }
     100% { opacity:1; }
 }
+.nav-toggle span::before, 
+.nav-toggle span::after, 
+.close-nav::after, 
+.close-nav::before {
+	background: #fff;
+}
+.fixed div .nav-toggle span::before, 
+.fixed div .nav-toggle span::after {
+	background: #000;
+}
+/*---------------------- Full Page Division Event Display ----------------------*/
+.full-section {
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+}
+.left-pane {
+    width: 60%;
+    background: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.right-pane {
+    width: 40%;
+    background: #FAFAFA;
+    padding: 5%;
+}
+.right-pane hr {
+    margin-top: 2%;
+    height: 2px;
+    background: #00897B;
+}
+.right-pane p {
+    font-family: 'Lato'; 
+}
+.left-pane img{
+    width: 60%;
+}
+@media (max-width: 768px) {
+    .left-pane img {
+        height: 100%;
+        width: auto;
+    }
+}
+.right-pane .close-button:hover {
+    transform: scale3d(1.2,1.2,1);
+    -webkit-transform: scale3d(1.2,1.2,1);
+    -moz-transform: scale3d(1.2,1.2,1);
+    -o-transform: scale3d(1.2,1.2,1);
+}
+.right-pane .close-button:focus {
+    text-decoration: none;
+    outline: none;
+}
+.right-pane .close-button {
+    text-decoration: none;
+    outline: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transition: all 0.4s ease-out;
+}
+.right-pane div {
+
+}
+

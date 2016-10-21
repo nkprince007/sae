@@ -31,7 +31,6 @@
         <!-- SCRIPTS END -->
     </head>
     <body>
-        <div id="fakeloader"></div>
         <!-- header section start-->
         <section class="banner" role="banner">
             <header id="header">
@@ -53,7 +52,7 @@
                                 <a href="#intro">About</a>
                             </li>
                             <li>
-                                <a href="#services">Events</a>
+                                <a href="#events">Events</a>
                             </li>
                             <li>
                                 <a href="#gallery">Gallery</a>
@@ -77,6 +76,21 @@
                 </div>
             </div>
         </section>
+        <div class="full-section">
+            <div class="left-pane pull-left">
+                <img src="/media/images/events/cycling.jpg">
+            </div>
+            <div class="right-pane pull-right">
+                <div class="text-right">
+                    <button class="close-button btn btn-lg btn-danger">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <h1 class="full-event-name">Cycling</h1>
+                <hr/>
+                <p class="full-event-description">Description</p>
+            </div>
+        </div>
         <!-- header section end -->
         <!-- intro section start -->
         <section id="intro" class="section intro">
@@ -111,7 +125,7 @@
         <!-- intro section end -->
         <!-- services section start -->
         {% if past_event_list or upcoming_event_list or ongoing_event_list %}
-        <section class="event-section">
+        <section class="event-section" id="events">
             {% if past_event_list %}
             <div class="container">
                 <div class="section-header">
@@ -121,10 +135,11 @@
                     <ul class="event-list">
                         {% for event in past_event_list %}
                         <li>
-                            <figure>
+                            <figure class="event">
                                 <img alt="event image" src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
                                 <figcaption>
-                                    <h3>{{event.name}}</h3>
+                                    <h3 class="event-name">{{event.name}}</h3>
+                                    <p class="event-description hidden">{{event.description}}</p>
                                 </figcaption>
                             </figure>
                         </li>
@@ -142,10 +157,11 @@
                     <ul class="event-list">
                         {% for event in upcoming_event_list %}
                         <li>
-                            <figure>
+                            <figure class="event">
                                 <img alt="event image" src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
                                 <figcaption>
-                                    <h3>{{event.name}}</h3>
+                                    <h3 class="event-name">{{event.name}}</h3>
+                                    <p class="event-description hidden">{{event.description}}</p>
                                 </figcaption>
                             </figure>
                         </li>
@@ -163,10 +179,11 @@
                     <ul class="event-list">
                         {% for event in ongoing_event_list %}
                         <li>
-                            <figure>
+                            <figure class="event">
                                 <img alt="event image" src="{{MEDIA_URL}}images/events/{{event.icon}}"/>
                                 <figcaption>
-                                    <h3>{{event.name}}</h3>
+                                    <h3 class="event-name">{{event.name}}</h3>
+                                    <p class="event-description hidden">{{event.description}}</p>
                                 </figcaption>
                             </figure>
                         </li>
@@ -406,7 +423,16 @@
                     <h2><strong>We</strong>'d love to hear from <strong>you</strong>.</h2>
                 </div>
                 <div class="container-fluid text-center">
-                    <p>Under Construction</p>
+                    <div class="suggestion col-sm-12 col-md-8 col-md-offset-2">
+                        <form method="post">
+                            <input class="col-sm-12" type="text" placeholder="What's your name?"/>
+                            <input class="col-sm-12" type="email" placeholder="Your email address please..."/>
+                            <textarea class="col-sm-12" rows="" cols="" placeholder="Tell us what you feel..."></textarea>
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-lg btn-primary">Send</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>

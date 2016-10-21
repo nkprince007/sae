@@ -40,3 +40,10 @@ hr {
 	height: 0px;
 	border-top: 2px solid gray;
 }
+.event-selector {
+	display: flex;
+	flex-direction: column;
+}
+.event-selector * {
+	width: 100%;
+}

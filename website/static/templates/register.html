@@ -10,17 +10,19 @@
         <form method="post">
             {% csrf_token %}
             {{ form.non_field_errors }}
-            <h2 class="col-md-12">Upcoming Events</h2>
-            <p class="col-md-12">You can choose any no. of events.</p>
-            <ul id="id_events" class="col-sm-12">
-            {% for event in form.events %}
-                <li>
-                    <div class="form-group col-sm-12">
-                        <div class="checkbox">{{event}}</div>
-                    </div>
-                </li>
-            {% endfor %}
-            </ul>
+            <div class="col-md-12 event-selector">
+                <h2 class="col-md-12">Upcoming Events</h2>
+                <p class="col-md-12">You can choose any no. of events.</p>
+                <ul id="id_events" class="col-sm-12">
+                {% for event in form.events %}
+                    <li>
+                        <div class="form-group col-sm-12">
+                            <div class="checkbox">{{event}}</div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
             <div class="col-md-12 form-group label-floating">
                 {{ form.first_name.errors }}
                 <label class="control-label" for="id_first_name">First name</label>
