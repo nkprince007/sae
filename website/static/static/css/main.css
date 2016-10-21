@@ -1301,7 +1301,6 @@ ul.list-default li
     padding: 0px;
     position: relative;
     border-top: 2px solid #53d491;
-    border-bottom: 2px solid white;
     border-radius: 2px;
 }
 
@@ -1321,14 +1320,14 @@ ul.list-default li
     position: absolute;
     left: 0;
     padding: 20px;
-    background: white;
-    color: black;
-    border-top: 2px solid #53d491;
-    font-family: 'Helvetica';
+    background: rgb(44, 63, 82);
+    font-family: 'Lato', sans-serif;
 }
 
 .event-list h3 {
     font-size: 1.4em;
+    margin: 0px;
+    color: white;
     font-family: 'Open Sans Light';
 }
 
@@ -1639,7 +1638,13 @@ ul.list-default li
     border-radius: 50%;
     transition: all 0.4s ease-out;
 }
-.right-pane div {
-
+.about-img-adj {
+    transition: all 0.3s ease-out;
+}
+.about-img-adj:hover {
+    transform: scale3d(1.2,1.2,1);
+    -webkit-transform: scale3d(1.2,1.2,1);
+    -moz-transform: scale3d(1.2,1.2,1);
+    -o-transform: scale3d(1.2,1.2,1);
 }
 

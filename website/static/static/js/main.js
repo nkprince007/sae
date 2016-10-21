@@ -73,7 +73,9 @@ $(document).ready(function() {
 		duration: 1500, 
 		// beforeReveal: function (domEl) {console.log(domEl.id+"beforeReveal")},
 		// beforeReset: function (domEl) {console.log(domEl.id+"beforeReset")},
-		// afterReveal: function (domEl) {console.log(domEl.id+"afterReveal")},
+		afterReveal: function (domEl) {
+			console.log($(domEl).attr('style',''))
+		},
 		// afterReset: function (domEl) {console.log(domEl.id+"afterReset")},
 		useDelay: 'once'
 	})
