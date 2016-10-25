@@ -1,3 +1,9 @@
+// Mobile 
+var mobile = false
+if(screen.width <= 768) {
+	mobile = true
+}
+
 $(window).on('load',function() {
 	//Hide preloader
 	$('#fakeloader').fadeTo(1500,0)
@@ -230,7 +236,11 @@ $(document).ready(function() {
 		$('.right-pane').find('.full-event-name').html(name)
 		$('.left-pane img').velocity({translateY: '0%', duration: 1500})
 		$('.right-pane').velocity({translateY: '0%', duration: 1500})
-		$('.full-section').velocity({opacity: 1,  delay: 2000}, {display: 'flex'})
+		display = 'flex'
+		if(mobile) {
+			display = 'inline-block'
+		}
+		$('.full-section').velocity({opacity: 1,  delay: 2000}, {display: display})
 	}
 
 	slideOut = function() {

@@ -8,6 +8,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+
 @font-face
 {
     font-family: 'Open Sans Light';
@@ -504,6 +506,7 @@ Common Styles
 
 .section-header
 {
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     padding-bottom: 30px;
 }
@@ -511,6 +514,10 @@ Common Styles
 .section-header * {
     color: white;
 }
+/*
+.section-header h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+}*/
 
 .section-header p {
     font-size: 22px;
@@ -1397,6 +1404,7 @@ ul.list-default li
 .fixed div .nav-toggle span::after {
 	background: #000;
 }
+
 /*---------------------- Full Page Division Event Display ----------------------*/
 .full-section {
     top: 0px;
@@ -1414,8 +1422,10 @@ ul.list-default li
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    float: left;
 }
 .right-pane {
+    float: right;
     width: 40%;
     background: #FAFAFA;
     padding: 5%;
@@ -1430,12 +1440,6 @@ ul.list-default li
 }
 .left-pane img{
     width: 60%;
-}
-@media (max-width: 768px) {
-    .left-pane img {
-        height: 100%;
-        width: auto;
-    }
 }
 .right-pane .close-button:hover {
     transform: scale3d(1.2,1.2,1);
@@ -1455,6 +1459,24 @@ ul.list-default li
     border-radius: 50%;
     transition: all 0.4s ease-out;
 }
+@media only screen and (max-width: 768px) {
+    .full-section {
+        display: inline-block;
+    }
+    .left-pane {
+        display: block;
+        width: 100%;
+        height: 60%;
+    }
+    .right-pane {
+        width: 100%;
+        height: 40%;
+    }
+    .left-pane img {
+        width: 100%;
+    }
+}
+
 .about-img-adj {
     transition: all 0.3s ease-out;
 }
@@ -1469,4 +1491,13 @@ ul.list-default li
 }
 .btn-register:hover {
     transform: scale(1.2);
+}
+a[href="/admin"] {
+    transition: all 0.5s ease;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    outline: none;
+}
+a[href="/admin"]:hover {
+    color: white;
 }

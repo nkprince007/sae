@@ -11,3 +11,4 @@ lib/
 **/static-only/
 **/media/
 *.zip
+pip-selfcheck.json
