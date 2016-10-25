@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Registration Form</title>
+		<meta name="description" content="Registration Form for all events." />
+		<meta name="keywords" content="fullscreen form, css animations, distraction-free, web design" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/components.css' %}" />
+		<script src="{% static 'js/modernizr.js'%}"></script>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+            *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+            .clearfix:before, .clearfix:after { content: ''; display: table; }
+            .clearfix:after { clear: both; }
+
+            html, body, .container {
+                height: 100%;
+            }
+
+            body {
+                background: #3b3f45;
+                color: #fff;
+                font-weight: 400;
+                font-size: 1em;
+                font-family: 'Raleway', Arial, sans-serif;
+                overflow: hidden;
+                overflow-y: scroll;
+                min-height: 590px;
+            }
+
+            a {
+                color: rgba(0,0,0,0.3);
+                text-decoration: none;
+                outline: none;
+            }
+
+            a:hover, a:focus {
+                color: #fff;
+            }
+
+        </style>
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1>Registration Form</h1>
+				</div>
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+					<ol class="fs-fields">
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1" data-info="Trust us, we will keep your info private...">What's your name?</label>
+							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Prof. James Moriarty" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your email address?</label>
+							<input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="sher@locked.com" required/>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" data-info="You can choose any no. of events..">Here are our events. Give them a try...</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q3c" name="q3" type="radio" value="social"/><label for="q3c" class="radio-social">Become famous</label></span>
+								<span><input id="q3b" name="q3" type="radio" value="conversion"/><label for="q3b" class="radio-conversion">Sell things</label></span>
+								<span><input id="q3a" name="q3" type="radio" value="mobile"/><label for="q3a" class="radio-mobile">Mobile market</label></span>
+							</div>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" data-info ="We won't give you any blank calls, we promise..." for="q4">What's your mobile number?</label>
+							<input class="fs-anim-lower" id="q4" name="q4" type="tel" />
+						</li>
+					</ol><!-- /fs-fields -->
+					<button class="fs-submit" type="submit">Send answers</button>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+		</div><!-- /container -->
+		<script src="{% static 'js/fullscreenForm.js' %}"></script>
+		<script>
+			(function() {
+				
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				new FForm( formWrap, {
+					onReview : function() {
+                        $('body').addClass('overview'); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+	</body>
+</html>
