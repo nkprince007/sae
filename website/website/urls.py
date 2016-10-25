@@ -23,6 +23,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^event/', include('event.urls')),
     url(r'^admin/', admin.site.urls, name='admin'),
+    url(r'^test/', views.test, name='test'),
     url(r'^$', views.Home.as_view(), name='home'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

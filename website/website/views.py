@@ -27,3 +27,6 @@ class Home(View):
 
 def redirect_to_home(request):
     return redirect('home')
+
+def test(request):
+    return render(request, 'fsRegister.html')

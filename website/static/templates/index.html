@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>SAE India - NITD Chapter</title>
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <!--Thank you for paying your attention towards the structure and layout of the page. :P nkprince007@gmail.com 
-        Hope you find it interesting enough. Mail any suggestions to nkprince007@gmail.com-->
+        <!-- Thank you for paying your attention towards the DOM. :P. All suggestions are welcome.-->
+        <!-- All the source code is available at github.com/nkprince007 -->
         <!-- STYLES -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.css' %}">
@@ -23,7 +23,7 @@
         <script type="text/javascript" src="{% static 'js/velocity.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
+        <!-- <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script> -->
         <script type="text/javascript" src="{% static 'js/vegas.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery.scrollreveal.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/typed.min.js' %}"></script>
@@ -36,33 +36,17 @@
             <header id="header">
                 <div class="header-content clearfix">
                     <div id="imglogo"> 
-                        <a class="logo" href="#banner">
-                            <img id="logo-black" src="{% static 'images/logo-black.png' %}" />
-                        </a>
-                        <a class="logo" href="#banner">
-                            <img id="logo-white" src="{% static 'images/logo-white.png' %}" />
-                        </a>                         
+                        <a class="logo" href="#banner"><img id="logo-black" src="{% static 'images/logo-black.png' %}" /></a>
+                        <a class="logo" href="#banner"><img id="logo-white" src="{% static 'images/logo-white.png' %}" /></a>
                     </div>
                     <nav class="navigation" role="navigation">
                         <ul class="primary-nav">
-                            <li>
-                                <a href="#banner">Home</a>
-                            </li>
-                            <li>
-                                <a href="#intro">About</a>
-                            </li>
-                            <li>
-                                <a href="#events">Events</a>
-                            </li>
-                            <li>
-                                <a href="#gallery">Gallery</a>
-                            </li>
-                            <li>
-                                <a href="#teams">Our Team</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact Us</a>
-                            </li>
+                            <li><a href="#banner">Home</a></li>
+                            <li><a href="#intro">About</a></li>
+                            <li><a href="#events">Events</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#teams">Our Team</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
                         </ul>
                     </nav>
                     <a href="#" class="nav-toggle">Menu<span></span></a>
@@ -76,19 +60,15 @@
                 </div>
             </div>
         </section>
-        <div class="full-section">
-            <div class="left-pane pull-left">
-                <img src="/media/images/events/cycling.jpg">
-            </div>
+        <div class="full-section hidden for-now">
+            <div class="left-pane pull-left"><img src=""></div>
             <div class="right-pane pull-right">
                 <div class="text-right">
-                    <button class="close-button btn btn-lg btn-danger">
-                        <i class="fa fa-close"></i>
-                    </button>
+                    <button class="close-button btn btn-lg btn-danger"><i class="fa fa-close"></i></button>
                 </div>
-                <h1 class="full-event-name">Cycling</h1>
-                <hr/>
-                <p class="full-event-description">Description</p>
+                <h1 class="full-event-name"></h1>
+                <hr />
+                <p class="full-event-description"></p>
             </div>
         </div>
         <!-- header section end -->
@@ -191,6 +171,9 @@
                     </ul>
                 </div>
             </div>
+            {% endif %}
+            {% if ongoing_event_list or upcoming_event_list %}
+            <div class="text-center"><a class="btn btn-lg btn-success btn-register" href="/event/register">Register here</a></div>
             {% endif %}
         </section>
         {% endif %}
@@ -427,9 +410,9 @@
                         <form method="post">
                             <input class="col-sm-12" type="text" placeholder="What's your name?"/>
                             <input class="col-sm-12" type="email" placeholder="Your email address please..."/>
-                            <textarea class="col-sm-12" rows="" cols="" placeholder="Tell us what you feel..."></textarea>
-                            <div class="col-sm-12">
-                                <button type="submit" class="btn btn-lg btn-primary">Send</button>
+                            <textarea class="col-sm-12" placeholder="Tell us what you feel..."></textarea>
+                            <div class="text-center col-sm-12">
+                                <button type="submit" class="btn btn-success">Send</button>
                             </div>
                         </form>
                     </div>
@@ -449,7 +432,7 @@
         <section id="foot">
             <div class="foot">
                 <p class="">© 2016 SAE-NITD Design Team. All Rights Reserved.</p>
-                <p><a href="/admin">Administrator</a></p>
+                <p><a href="/admin">Administrator Login</a></p>
             </div>
         </section>
         <!-- footer end -->

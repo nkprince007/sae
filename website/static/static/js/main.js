@@ -74,7 +74,7 @@ $(document).ready(function() {
 		// beforeReveal: function (domEl) {console.log(domEl.id+"beforeReveal")},
 		// beforeReset: function (domEl) {console.log(domEl.id+"beforeReset")},
 		afterReveal: function (domEl) {
-			console.log($(domEl).attr('style',''))
+			$(domEl).attr('style','')
 		},
 		// afterReset: function (domEl) {console.log(domEl.id+"afterReset")},
 		useDelay: 'once'
@@ -215,6 +215,7 @@ $(document).ready(function() {
 		}
 	})
 
+	//Banner typography effects+
 	$(".cb-slideshow span").typed({
 		strings: ["Welcome to SAE", "Stunt Mania @Gravity Freakerzz", "Military Show", "Cheers to our <b>Team</b>!"],
         backDelay: 3500,
@@ -222,6 +223,7 @@ $(document).ready(function() {
         showCursor: true
 	})
 
+	//Event Detail pane Effects
 	slideIn = function(src, desc, name) {
 		$('.left-pane img').attr('src', src)
 		$('.right-pane').find('.full-event-description').html(desc)
@@ -236,7 +238,7 @@ $(document).ready(function() {
 		$('.right-pane').velocity({translateY: '-100%', duration: 1500})
 		$('.full-section').velocity({opacity: 0, delay: 2000}, {display: 'none'})
 	}
-
+	
 	$('.close-button').on('click', function() {
 		slideOut()
 	})
@@ -248,4 +250,21 @@ $(document).ready(function() {
 		src = $(figure.find('img')).attr('src')
 		slideIn(src, desc, name)
 	})
+
+	//Adjustments
+	slideOut()
+	setTimeout(function() {
+		$('.full-section').removeClass('hidden')
+	}, 1500)
+
+	//Adjustments
+	// $('.left-pane').velocity({translateX: '-100%', duration: 5000})
+	// $('.right-pane').velocity({translateX: '100%', duration: 5000})
+	// $('.full-section').velocity({opacity: 0, delay: 5000}, {display: 'none'})
+	// setTimeout(function(){
+	// 	$('.for-now').removeClass('hidden')
+	// 	$('.left-pane').css('width','60%')
+	// 	$('.right-pane').css('width', '40%')
+	// }, 1500)
+	
 })
